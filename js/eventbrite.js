@@ -11,7 +11,7 @@ class EventBrite{
     }
 
     async queryAPI(eventName, category){
-        const eventResponse = await fetch(`https://www.eventbriteapi.com/v3/events/:event_id/${category}`);
+        const eventResponse = await fetch(`https://www.eventbriteapi.com/v3/events/search/?q=${eventName}&sort_by=${this.orderBy}&categories=${category}&token=${this.auth_token}`);
         console.log(eventResponse)
         const events = await eventResponse.json();
         console.log(events);

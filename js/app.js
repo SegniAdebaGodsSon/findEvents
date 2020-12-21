@@ -16,7 +16,7 @@ document.querySelector('#submitBtn')
                 .then(events => {
                     const eventsList = events.events;
                     if(eventsList.length>0){
-
+                        ui.displayEvents(eventsList);
                     }else{
                         // print message(error)
                         ui.printMessage('No Results found', 'alert alert-danger mt-4 text-center');
