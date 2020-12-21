@@ -12,6 +12,16 @@ document.querySelector('#submitBtn')
         
         if(eventName !== ''){
             // query event brite api
+            eventBrite.queryAPI(eventName, category)
+                .then(events => {
+                    const eventsList = events.events;
+                    if(eventsList.length>0){
+
+                    }else{
+                        // print message(error)
+                        ui.printMessage('No Results found', 'alert alert-danger mt-4 text-center');
+                    }
+                });
         }else{
             // print message(error)
             ui.printMessage('Add an Event or City', 'alert alert-danger mt-4 text-center');
